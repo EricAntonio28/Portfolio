@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eric | Game Developer & Mobile Specialist</title>
+    <meta name="description" content="Portafolio profesional de Eric. Especialista en Desarrollo de Videojuegos (Unity, Blender, Sonido), Aplicaciones Móviles (Flutter, Java, IoT) y Bases de Datos. Técnica DAM (Desarrollo de Aplicaciones Multiplataforma).">
+    
+    <!-- Open Graph para redes sociales / LinkedIn -->
+    <meta property="og:title" content="Eric | Game Developer & Mobile Specialist">
+    <meta property="og:description" content="Explora mi portafolio de videojuegos en Unity, aplicaciones móviles en Flutter, sistemas IoT y bases de datos. Graduada en DAM.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts: Outfit (títulos) e Inter (cuerpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para iconos modernos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fondo de Cuadrícula Tecnológica y Resplandores Ambientales -->
+    <div class="tech-grid-bg"></div>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-gamepad"></i></span>
+                <span class="logo-text">ERIC<span class="accent-dot">.</span>DEV</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                    <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                    <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                    <li><a href="#trayectoria" class="nav-link">Trayectoria</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN HERO -->
+        <section id="inicio" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-tagline"><i class="fa-solid fa-bolt"></i> Disponible para Proyectos Multiplataforma</span>
+                    <h1 class="hero-title">
+                        Hola, soy Eric<br>
+                        <span class="text-gradient">Diseño Mundos y Codo a Codo con el Hardware</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Soy una <span class="highlight-text">desarrolladora multiplataforma (DAM)</span> apasionada por crear experiencias interactivas inmersivas en <span class="highlight-text">Unity</span> y aplicaciones móviles robustas en <span class="highlight-text">Flutter / Java</span> integradas con bases de datos y sistemas <span class="highlight-text">IoT</span>.
+                    </p>
+                    <div class="typing-container">
+                        <span class="typing-prefix">>_ </span>
+                        <span class="typing-text" id="typing-text"></span><span class="typing-cursor">|</span>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#proyectos" class="btn btn-primary">
+                            <span>Ver Proyectos</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#contacto" class="btn btn-secondary">
+                            <span>Contáctame</span>
+                            <i class="fa-regular fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="avatar-glow-container">
+                        <!-- Representación digital interactiva 3D/SVG en lugar de imagen vacía -->
+                        <div class="interactive-hologram">
+                            <svg class="hologram-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="glowGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="var(--color-primary)" />
+                                        <stop offset="100%" stop-color="var(--color-secondary)" />
+                                    </linearGradient>
+                                    <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="8" result="blur" />
+                                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                    </filter>
+                                </defs>
+                                <circle cx="100" cy="100" r="75" fill="none" stroke="url(#glowGrad1)" stroke-width="2" filter="url(#glowFilter)" class="holo-circle holo-outer" />
+                                <circle cx="100" cy="100" r="55" fill="none" stroke="var(--color-secondary)" stroke-dasharray="10, 15" stroke-width="1.5" class="holo-circle holo-mid" />
+                                <polygon points="100,65 130,115 70,115" fill="none" stroke="var(--color-primary)" stroke-width="2" class="holo-shape holo-triangle" />
+                                <g transform="translate(100,105)" class="holo-inner-icon">
+                                    <path d="M-15,-10 L15,-10 L15,10 L-15,10 Z M-10,-5 L-10,5 M10,-5 L10,5" fill="none" stroke="var(--color-accent)" stroke-width="2"/>
+                                </g>
+                                <circle cx="100" cy="65" r="4" fill="var(--color-accent)" class="holo-node node-t" />
+                                <circle cx="130" cy="115" r="4" fill="var(--color-accent)" class="holo-node node-r" />
+                                <circle cx="70" cy="115" r="4" fill="var(--color-accent)" class="holo-node node-l" />
+                            </svg>
+                            <div class="hologram-scanline"></div>
+                        </div>
+                        <div class="avatar-badge font-dev">
+                            <span class="badge-icon"><i class="fa-solid fa-code"></i></span>
+                            <span class="badge-text">DAM + Unity</span>
+                        </div>
+                        <div class="avatar-badge font-iot">
+                            <span class="badge-icon"><i class="fa-solid fa-microchip"></i></span>
+                            <span class="badge-text">Flutter & IoT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-down">
+                <a href="#sobre-mi" aria-label="Ir a la sección Sobre Mí">
+                    <span>Desliza</span>
+                    <i class="fa-solid fa-chevron-down bounce"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SOBRE MÍ -->
+        <section id="sobre-mi" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">¿Quién soy?</span>
+                    <h2 class="section-title">Sobre Mí</h2>
+                    <div class="title-underline"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-info">
+                        <h3 class="about-heading">Transformando Ideas en Código y Modelados 3D</h3>
+                        <p class="about-text">
+                            Mi viaje en el desarrollo tecnológico comenzó con un objetivo claro: dominar el desarrollo de software tanto en la pantalla como en su interacción con el mundo real. Soy egresada del **Grado Superior de DAM (Desarrollo de Aplicaciones Multiplataforma)**, donde aprendí las bases sólidas de la ingeniería de software y programación en lenguajes como **Java** y la gestión de **bases de datos**.
+                        </p>
+                        <p class="about-text">
+                            Posteriormente, decidí seguir mi pasión por los mundos virtuales realizando la **Especialización en Videojuegos**, lo cual me dio una profunda destreza técnica en el motor **Unity (C#)**, el diseño tridimensional y animación en **Blender**, así como la producción e integración de **sonidos y efectos interactivos**.
+                        </p>
+                        <p class="about-text">
+                            En el ámbito laboral, he trabajado en el sector de las tecnologías **IoT (Internet de las Cosas)**, desarrollando aplicaciones móviles multiplataforma en **Flutter** para empresas del sector, enlazando sensores mediante protocolos de red con bases de datos relacionales y de tiempo real. Esta versatilidad me permite afrontar proyectos desafiantes con una visión holística única.
+                        </p>
+                        <div class="personal-details">
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fa-solid fa-graduation-cap"></i> Formación:</span>
+                                <span class="detail-val">DAM + Especialidad en Videojuegos</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fa-solid fa-briefcase"></i> Enfoque:</span>
+                                <span class="detail-val">Videojuegos, Mobile & IoT</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label"><i class="fa-solid fa-location-dot"></i> Ubicación:</span>
+                                <span class="detail-val">España</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-gamepad"></i></div>
+                            <span class="stat-number" data-target="1500">1.5K+</span>
+                            <span class="stat-label">Horas en Unity</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-cube"></i></div>
+                            <span class="stat-number" data-target="80">80+</span>
+                            <span class="stat-label">Modelos 3D Blender</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                            <span class="stat-number" data-target="3">3</span>
+                            <span class="stat-label">Proyectos Móviles & IoT</span>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-database"></i></div>
+                            <span class="stat-number" data-target="100">100%</span>
+                            <span class="stat-label">Eficiencia en Datos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN HABILIDADES -->
+        <section id="habilities" class="skills-section">
+            <div class="container">
+                <div class="section-header" id="habilidades">
+                    <span class="section-subtitle">Lo que sé hacer</span>
+                    <h2 class="section-title">Habilidades Técnicas</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="skills-container-grid">
+                    <!-- Categoría 1: Videojuegos -->
+                    <div class="skills-category-card">
+                        <div class="category-header">
+                            <div class="category-icon"><i class="fa-solid fa-vr-cardboard"></i></div>
+                            <h3 class="category-title">Videojuegos & 3D</h3>
+                        </div>
+                        <p class="category-desc">Creación de mundos interactivos, mecánicas en tiempo real y entornos inmersivos.</p>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Unity & C#</span>
+                                    <span class="skill-pct">90%</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Blender (Modelado & Texturas)</span>
+                                    <span class="skill-pct">85%</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Diseño de Sonido / SFX</span>
+                                    <span class="skill-pct">75%</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Físicas e Inteligencia Artificial</span>
+                                    <span class="skill-pct">80%</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categoría 2: Mobile & IoT -->
+                    <div class="skills-category-card">
+                        <div class="category-header">
+                            <div class="category-icon"><i class="fa-solid fa-microchip"></i></div>
+                            <h3 class="category-title">Móvil, Multiplataforma e IoT</h3>
+                        </div>
+                        <p class="category-desc">Diseño de aplicaciones móviles fluidas y conexión de software con sensores de telemetría.</p>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Flutter & Dart</span>
+                                    <span class="skill-pct">85%</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Java SE / Android Nativo</span>
+                                    <span class="skill-pct">80%</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Sistemas y Protocolos IoT</span>
+                                    <span class="skill-pct">80%</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Consumo de APIs REST / Bluetooth</span>
+                                    <span class="skill-pct">85%</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categoría 3: Backend & Data -->
+                    <div class="skills-category-card">
+                        <div class="category-header">
+                            <div class="category-icon"><i class="fa-solid fa-database"></i></div>
+                            <h3 class="category-title">Bases de Datos & Backend</h3>
+                        </div>
+                        <p class="category-desc">Gestión, estructuración y almacenamiento robusto de información a gran escala.</p>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">SQL (MySQL, PostgreSQL, SQLite)</span>
+                                    <span class="skill-pct">85%</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">NoSQL (Firebase, MongoDB)</span>
+                                    <span class="skill-pct">75%</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Arquitectura de Servidor (Java)</span>
+                                    <span class="skill-pct">80%</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Patrones de Diseño (DAM)</span>
+                                    <span class="skill-pct">85%</span>
+                                </div>
+                                <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN PROYECTOS (PORTAFOLIO) -->
+        <section id="proyectos" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Mis trabajos</span>
+                    <h2 class="section-title">Proyectos Destacados</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <!-- Filtros Interactivos -->
+                <div class="projects-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="games">Videojuegos / 3D</button>
+                    <button class="filter-btn" data-filter="mobile">Móvil & IoT</button>
+                    <button class="filter-btn" data-filter="backend">Backend & Datos</button>
+                </div>
+
+                <!-- Grid de Proyectos -->
+                <div class="projects-grid" id="projects-grid">
+                    
+                    <!-- Proyecto 1: Videojuego Unity -->
+                    <div class="project-card" data-category="games">
+                        <div class="project-media">
+                            <div class="project-visual-placeholder neon-games-placeholder">
+                                <i class="fa-solid fa-gamepad game-icon-glow"></i>
+                                <div class="lines-bg"></div>
+                            </div>
+                            <div class="project-category-tag">Unity / Blender</div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Videojuego 3D (Proyecto Académico)</h3>
+                            <p class="project-desc">
+                                Aventura tridimensional interactiva desarrollada en clase durante mi especialización en videojuegos. Programación completa de lógicas en C#, físicas de personajes, diseño y modelado de assets low-poly optimizados en Blender, composición de sonidos e integración sonora inmersiva en Unity.
+                            </p>
+                            <div class="project-tags">
+                                <span>Unity</span>
+                                <span>C#</span>
+                                <span>Blender 3D</span>
+                                <span>Diseño de Sonido</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Código</a>
+                                <a href="#" class="project-link"><i class="fa-solid fa-circle-play"></i> Jugar Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 2: Flutter IoT App -->
+                    <div class="project-card" data-category="mobile">
+                        <div class="project-media">
+                            <div class="project-visual-placeholder neon-mobile-placeholder">
+                                <i class="fa-solid fa-network-wired iot-icon-glow"></i>
+                                <div class="lines-bg"></div>
+                            </div>
+                            <div class="project-category-tag">Flutter / IoT</div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Aplicaciones Móviles e IoT (Proyectos Profesionales)</h3>
+                            <p class="project-desc">
+                                Desarrollo y puesta en producción de soluciones móviles multiplataforma en Flutter para empresas relacionadas con el sector IoT. Conexión en tiempo real con hardware y sensores a través de protocolos de red (MQTT, HTTP, Bluetooth), telemetría interactiva y almacenamiento local optimizado.
+                            </p>
+                            <div class="project-tags">
+                                <span>Flutter</span>
+                                <span>Dart</span>
+                                <span>IoT Integration</span>
+                                <span>SQLite</span>
+                                <span>Bases de Datos</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Repositorio</a>
+                                <a href="#" class="project-link"><i class="fa-solid fa-mobile-screen"></i> Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 3: Java Server & DB -->
+                    <div class="project-card" data-category="backend">
+                        <div class="project-media">
+                            <div class="project-visual-placeholder neon-backend-placeholder">
+                                <i class="fa-solid fa-server db-icon-glow"></i>
+                                <div class="lines-bg"></div>
+                            </div>
+                            <div class="project-category-tag">Java / SQL / DAM</div>
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Sistemas de Gestión Multiplataforma (Proyectos Académicos)</h3>
+                            <p class="project-desc">
+                                Sistemas y utilidades de backend programados en Java aplicando patrones de diseño de ingeniería de software estructurados durante el grado de DAM. Conexión robusta e integración de bases de datos relacionales SQL con modelado entidad-relación y consultas de alto rendimiento.
+                            </p>
+                            <div class="project-tags">
+                                <span>Java SE</span>
+                                <span>SQL / MySQL</span>
+                                <span>Patrones de Diseño</span>
+                                <span>DAO Architecture</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Código</a>
+                                <a href="#" class="project-link"><i class="fa-solid fa-database"></i> Ver Base de Datos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN TRAYECTORIA (EXPERIENCIA / EDUCACIÓN) -->
+        <section id="trayectoria" class="timeline-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Mi camino</span>
+                    <h2 class="section-title">Trayectoria y Formación</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="timeline">
+                    <!-- Evento 1: IoT Developer -->
+                    <div class="timeline-item left">
+                        <div class="timeline-dot"><i class="fa-solid fa-microchip"></i></div>
+                        <div class="timeline-date">2024 - 2026 (Actualidad)</div>
+                        <div class="timeline-content">
+                            <h3>Desarrolladora Mobile & IoT</h3>
+                            <h4>Empresa del Sector IoT / Smart Systems</h4>
+                            <p>
+                                Encargada del diseño y programación de aplicaciones móviles de alta interactividad utilizando Flutter y Dart. Integración directa con hardware y placas de sensores IoT mediante Bluetooth Low Energy (BLE), protocolos MQTT y sockets TCP. Gestión de flujos de datos asíncronos persistidos en bases de datos SQLite y bases de datos relacionales, consolidando mi trayectoria desde 2024 a 2026.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Evento 2: Especialización Videojuegos -->
+                    <div class="timeline-item right">
+                        <div class="timeline-dot"><i class="fa-solid fa-gamepad"></i></div>
+                        <div class="timeline-date">2024 - 2025</div>
+                        <div class="timeline-content">
+                            <h3>Especialización en Videojuegos</h3>
+                            <h4>Curso de Especialización de Grado Superior</h4>
+                            <p>
+                                Formación avanzada enfocada en el diseño técnico y programación de videojuegos interactivos. Dominio del motor Unity, desarrollo en C# aplicando programación orientada a componentes, simulación de físicas y sistemas de audio. Modelado 3D optimizado para videojuegos (Low-Poly, Rigging y Animación básica) con Blender, comenzando mi inmersión en esta especialidad en 2024.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Evento 3: Grado DAM -->
+                    <div class="timeline-item left">
+                        <div class="timeline-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="timeline-date">2022 - 2024</div>
+                        <div class="timeline-content">
+                            <h3>Técnica Superior en DAM</h3>
+                            <h4>Desarrollo de Aplicaciones Multiplataforma</h4>
+                            <p>
+                                Adquisición de sólidos cimientos de ingeniería de software, arquitectura de sistemas y patrones de diseño (MVC, DAO). Programación avanzada en Java, creación de interfaces de usuario interactivas, integración de bases de datos relacionales robustas (SQL) y modelado entidad-relación, finalizando mis estudios oficiales a mediados de 2024.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CONTACTO -->
+        <section id="contacto" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">¿Hablamos?</span>
+                    <h2 class="section-title">Contacto</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Información de Contacto -->
+                    <div class="contact-info-panel">
+                        <h3 class="contact-heading">¡Pongámonos en contacto!</h3>
+                        <p class="contact-text">
+                            ¿Tienes un proyecto en mente en el que necesites combinar el desarrollo de videojuegos, realidad virtual, apps móviles integradas con hardware o bases de datos a medida? Escríbeme y estaré encantada de colaborar contigo.
+                        </p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-card-item">
+                                <div class="card-icon"><i class="fa-regular fa-envelope"></i></div>
+                                <div class="card-content">
+                                    <span class="card-label">Envíame un correo</span>
+                                    <a href="mailto:eric.dev@example.com" class="card-value">eric.dev@example.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-card-item">
+                                <div class="card-icon"><i class="fa-brands fa-github"></i></div>
+                                <div class="card-content">
+                                    <span class="card-label">Sigue mis repositorios</span>
+                                    <a href="https://github.com" target="_blank" class="card-value">github.com/eric-dev</a>
+                                </div>
+                            </div>
+                            <div class="contact-card-item">
+                                <div class="card-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                                <div class="card-content">
+                                    <span class="card-label">Conecta en LinkedIn</span>
+                                    <a href="https://linkedin.com" target="_blank" class="card-value">linkedin.com/in/eric-dev</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulario de Contacto -->
+                    <div class="contact-form-panel">
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label for="name">Nombre</label>
+                                    <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Correo Electrónico</label>
+                                    <input type="email" id="email" name="email" required placeholder="tu@correo.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Asunto</label>
+                                <input type="text" id="subject" name="subject" required placeholder="¿En qué puedo ayudarte?">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-submit" id="btn-submit">
+                                <span>Enviar Mensaje</span>
+                                <i class="fa-regular fa-paper-plane"></i>
+                            </button>
+                            
+                            <div class="form-feedback" id="form-feedback"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2026 ERIC.DEV. Todos los derechos reservados. Creado con amor por el código y el modelado 3D.</p>
+            <div class="footer-socials">
+                <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:eric.dev@example.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
