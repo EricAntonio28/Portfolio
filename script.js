@@ -32,10 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const typingTextElement = document.getElementById('typing-text');
     const phrases = [
-        "Especialista en Unity & Blender 3D",
-        "Desarrolladora de Apps Móviles (Flutter & Java)",
+        "Especializado en Unity & Blender 3D",
+        "Desarrollador de Apps Móviles (Flutter & Java)",
         "Integración de Sistemas IoT & Hardware",
-        "Técnica Superior en DAM (Multiplataforma)"
+        "Bases de datos, backend & metodologías ágiles",
+        "Programador curioso de toda tecnología nueva",
+        "Técnico Superior en DAM (Multiplataforma)"
     ];
 
     let phraseIndex = 0;
@@ -90,37 +92,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => navObserver.observe(section));
 
+    const revealEls = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+        revealEls.forEach(el => revealObserver.observe(el));
+    } else {
+        revealEls.forEach(el => el.classList.add('is-visible'));
+    }
+
     const timelineItems = document.querySelectorAll('.timeline-item');
-    const timelineObserverOptions = {
-        root: null,
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
-    };
+    if ('IntersectionObserver' in window) {
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    timelineObserver.unobserve(entry.target);
+                }
+            });
+        }, { root: null, threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
 
-    const timelineObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-                timelineObserver.unobserve(entry.target);
-            }
-        });
-    }, timelineObserverOptions);
-
-    timelineItems.forEach(item => timelineObserver.observe(item));
-
-    const skillsSection = document.querySelector('.skills-section');
-    const skillsObserverOptions = { root: null, threshold: 0.2 };
-
-    const skillsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                skillsSection.classList.add('animate-skills');
-                skillsObserver.unobserve(entry.target);
-            }
-        });
-    }, skillsObserverOptions);
-
-    if (skillsSection) skillsObserver.observe(skillsSection);
+        timelineItems.forEach(item => timelineObserver.observe(item));
+    } else {
+        timelineItems.forEach(item => item.classList.add('show'));
+    }
 
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
@@ -135,14 +137,12 @@ document.addEventListener('DOMContentLoaded', () => {
             projectCards.forEach(card => {
                 const cardCategory = card.getAttribute('data-category');
                 card.style.opacity = '0';
-                card.style.transform = 'scale(0.95)';
 
                 setTimeout(() => {
                     if (filterValue === 'all' || cardCategory === filterValue) {
                         card.classList.remove('hide');
                         setTimeout(() => {
                             card.style.opacity = '1';
-                            card.style.transform = 'scale(1)';
                         }, 50);
                     } else {
                         card.classList.add('hide');
@@ -185,49 +185,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1500);
         });
     }
-
-    const stats = document.querySelectorAll('.stat-number');
-    const statsSection = document.querySelector('.about-stats-grid');
-    let animatedStats = false;
-
-    function formatDisplay(value, format) {
-        switch (format) {
-            case 'k': return (value / 1000).toFixed(1) + 'K+';
-            case 'plus': return value + '+';
-            case 'percent': return value + '%';
-            default: return value.toString();
-        }
-    }
-
-    function animateStatsCounter() {
-        stats.forEach(stat => {
-            const target = parseInt(stat.getAttribute('data-target'));
-            const format = stat.getAttribute('data-format') || 'number';
-            let current = 0;
-            const increment = Math.max(1, Math.ceil(target / 40));
-
-            function updateCounter() {
-                current += increment;
-                if (current < target) {
-                    stat.textContent = formatDisplay(current, format);
-                    setTimeout(updateCounter, 25);
-                } else {
-                    stat.textContent = formatDisplay(target, format);
-                }
-            }
-            updateCounter();
-        });
-    }
-
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && !animatedStats) {
-                animateStatsCounter();
-                animatedStats = true;
-                statsObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    if (statsSection) statsObserver.observe(statsSection);
 });
