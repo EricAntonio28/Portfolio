@@ -157,32 +157,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const formFeedback = document.getElementById('form-feedback');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            const data = Object.fromEntries(new FormData(contactForm).entries());
+            if (!data.name || !data.email) {
+                formFeedback.className = "form-feedback error";
+                formFeedback.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Por favor, rellena todos los campos obligatorios.`;
+                return;
+            }
+
             submitBtn.disabled = true;
             const originalBtnContent = submitBtn.innerHTML;
             submitBtn.innerHTML = `<span>Enviando...</span> <i class="fa-solid fa-spinner fa-spin"></i>`;
 
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData.entries());
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Accept': 'application/json' },
+                    body: new FormData(contactForm)
+                });
+                const result = await response.json();
 
-            setTimeout(() => {
-                if (!data.name || !data.email) {
-                    formFeedback.className = "form-feedback error";
-                    formFeedback.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Por favor, rellena todos los campos obligatorios.`;
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalBtnContent;
-                } else {
+                if (result.success) {
                     formFeedback.className = "form-feedback success";
                     formFeedback.innerHTML = `<i class="fa-solid fa-circle-check"></i> ¡Gracias, ${data.name}! Tu mensaje ha sido enviado con éxito.`;
                     contactForm.reset();
-                    setTimeout(() => {
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = originalBtnContent;
-                        formFeedback.style.display = '';
-                    }, 4000);
+                } else {
+                    throw new Error(result.message || 'Error al enviar');
                 }
-            }, 1500);
+            } catch (error) {
+                formFeedback.className = "form-feedback error";
+                formFeedback.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme directamente a ${'ericantoniobermeo@gmail.com'}.`;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnContent;
+                setTimeout(() => {
+                    formFeedback.style.display = '';
+                }, 5000);
+            }
         });
     }
 });

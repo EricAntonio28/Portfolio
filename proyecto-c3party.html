@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C3Party | Proyecto de Eric</title>
+    <meta name="description" content="C3Party: party game multijugador desarrollado en Unity durante la Especialización en Videojuegos y Realidad Virtual de Eric. Tecnologías, rol en el equipo y enlace para jugarlo en itch.io.">
+
+    <script>document.documentElement.classList.add('js');</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="grain-bg"></div>
+
+    <header class="header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-code"></i></span>
+                <span class="logo-text">ERIC<span class="accent-dot">.</span>DEV</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="index.html#sobre-mi" class="nav-link">Sobre Mí</a></li>
+                    <li><a href="index.html#habilidades" class="nav-link">Habilidades</a></li>
+                    <li><a href="index.html#proyectos" class="nav-link active">Proyectos</a></li>
+                    <li><a href="index.html#trayectoria" class="nav-link">Trayectoria</a></li>
+                    <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="detalle-proyecto" class="project-detail-hero">
+            <div class="container">
+                <a href="index.html#proyectos" class="back-link reveal">
+                    <i class="fa-solid fa-arrow-left"></i> Volver a Proyectos
+                </a>
+
+                <div class="section-header reveal">
+                    <div class="section-eyebrow">
+                        <span class="index-number">03</span>
+                        <span class="eyebrow-line"></span>
+                        <span class="section-subtitle">Videojuegos / 3D</span>
+                    </div>
+                    <h2 class="section-title">C3Party</h2>
+                </div>
+
+                <p class="detail-intro reveal">
+                    Party game multijugador ambientado en una escuela de magia: <strong>hasta 8 magos compiten</strong> en una colección de minijuegos en <strong>2D y 3D</strong> para sumar más puntos que sus rivales, todo en red local (LAN) desde Windows. Lo desarrollamos en equipo durante mi <strong>Especialización en Videojuegos y Realidad Virtual</strong>, usando el motor <strong>Unity</strong>.
+                </p>
+
+                <div class="chip-cloud detail-tags reveal">
+                    <span class="chip chip-lg"><i class="fa-solid fa-cube"></i> Unity</span>
+                    <span class="chip chip-lg"><i class="fa-solid fa-code"></i> C#</span>
+                    <span class="chip chip-lg"><i class="fa-solid fa-shapes"></i> Blender 3D</span>
+                    <span class="chip chip-lg"><i class="fa-solid fa-network-wired"></i> Multijugador LAN</span>
+                    <span class="chip chip-lg"><i class="fa-solid fa-volume-high"></i> Diseño de Sonido</span>
+                </div>
+
+                <div class="hero-buttons detail-cta reveal">
+                    <a href="https://c3videojuegos.itch.io/c3-party" target="_blank" rel="noopener" class="btn btn-primary">
+                        <span>Jugar en itch.io</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a href="index.html#proyectos" class="btn btn-ghost">
+                        <span>Ver más proyectos</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="mi-rol" class="project-role-section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-eyebrow">
+                        <span class="index-number">+</span>
+                        <span class="eyebrow-line"></span>
+                        <span class="section-subtitle">Mi participación</span>
+                    </div>
+                    <h2 class="section-title">En qué estuve involucrado</h2>
+                </div>
+
+                <div class="skills-container-grid role-grid">
+                    <div class="skills-category-card reveal reveal-scale">
+                        <div class="category-header">
+                            <span class="category-icon"><i class="fa-solid fa-code"></i></span>
+                            <h3 class="category-title">Lógica de gameplay</h3>
+                        </div>
+                        <p class="category-desc">
+                            Programación en C# de las reglas, el sistema de puntuación y la interacción entre los magos durante los minijuegos.
+                        </p>
+                    </div>
+
+                    <div class="skills-category-card reveal reveal-scale reveal-delay-1">
+                        <div class="category-header">
+                            <span class="category-icon"><i class="fa-solid fa-person-running"></i></span>
+                            <h3 class="category-title">Físicas de personajes</h3>
+                        </div>
+                        <p class="category-desc">
+                            Movimiento, colisiones e interacciones físicas de los personajes dentro de Unity para que cada minijuego se sintiera ágil y reactivo.
+                        </p>
+                    </div>
+
+                    <div class="skills-category-card reveal reveal-scale reveal-delay-1">
+                        <div class="category-header">
+                            <span class="category-icon"><i class="fa-solid fa-cube"></i></span>
+                            <h3 class="category-title">Modelado 3D en Blender</h3>
+                        </div>
+                        <p class="category-desc">
+                            Diseño y optimización de assets low-poly, incluyendo rigging y animación, listos para un rendimiento fluido en partidas de hasta 8 jugadores.
+                        </p>
+                    </div>
+
+                    <div class="skills-category-card reveal reveal-scale reveal-delay-2">
+                        <div class="category-header">
+                            <span class="category-icon"><i class="fa-solid fa-volume-high"></i></span>
+                            <h3 class="category-title">Sonido e integración</h3>
+                        </div>
+                        <p class="category-desc">
+                            Composición e integración de efectos de sonido interactivos en Unity para reforzar el feedback de cada minijuego.
+                        </p>
+                    </div>
+                </div>
+
+                <p class="role-note reveal">
+                    <i class="fa-solid fa-users"></i> C3Party fue un proyecto en equipo, desarrollado junto a mis compañeros de curso durante la Especialización en Videojuegos y Realidad Virtual (curso 2025/2026).
+                </p>
+            </div>
+        </section>
+
+        <section id="cta-final" class="project-final-cta">
+            <div class="container">
+                <div class="final-cta-box reveal">
+                    <h2 class="section-title">¿Te apetece probarlo?</h2>
+                    <p>Descárgalo gratis y juega con hasta 7 amigos más en red local.</p>
+                    <a href="https://c3videojuegos.itch.io/c3-party" target="_blank" rel="noopener" class="btn btn-primary">
+                        <span>Jugar C3Party en itch.io</span>
+                        <i class="fa-solid fa-gamepad"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2026 ERIC.DEV. Todos los derechos reservados. Creado con amor por el código y el modelado 3D.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/EricAntonio28" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/ericantoniobermeoleon/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:ericantoniobermeo@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
